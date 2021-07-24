@@ -43,7 +43,7 @@ CORS(app, resources={r'/api/v1/*': {'origins': os.environ['CORS_ORIGINS']}})
 limiter = Limiter(app, key_func=get_remote_address)
 
 @app.route(r'/api/v1/write', methods=['POST'])
-@limiter.limit('1/second')
+@limiter.limit('1/second;15/minute')
 def write():
     data = request.get_json()
 
