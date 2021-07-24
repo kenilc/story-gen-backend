@@ -55,7 +55,9 @@ def write():
     if 'storyline' in data and type(data['storyline']) == list:
         for word in data['storyline']:
             if type(word) == str:
-                words.append(word.strip())
+                word = word.strip()
+                if word:
+                    words.append(word)
 
     lines = []
     if title and words:
