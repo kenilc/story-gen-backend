@@ -15,7 +15,7 @@ To start the server for testing:
 > pip install -r requirements.txt
 
 > cat .env
-CORS_ORIGINS=http://localhost:5000
+CORS_ORIGINS=http://localhost:8000
 MODEL_PATH=./models/checkpoint-final
 
 > python app.py
