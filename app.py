@@ -61,8 +61,9 @@ def write():
 
     lines = []
     if title and words:
-        story = generate(title, words, top_p=0.9, max_length=1000, do_sample=True, no_repeat_ngram_size=3)
+        story = generate(title, words, top_p=0.9, max_length=1000, do_sample=True, num_beams=5, no_repeat_ngram_size=3)
         lines = sent_tokenize(story)
+        lines = lines[:len(words)]
     return jsonify(lines)
 
 if __name__ == '__main__':
